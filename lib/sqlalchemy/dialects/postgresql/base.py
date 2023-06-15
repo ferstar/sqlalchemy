@@ -2901,7 +2901,7 @@ class PGDialect(default.DefaultDialect):
     def _get_server_version_info(self, connection):
         v = connection.execute("select version()").scalar()
         m = re.match(
-            r".*(?:PostgreSQL|EnterpriseDB) "
+            r".*(?:PostgreSQL|EnterpriseDB|openGauss|GaussDB) "
             r"(\d+)\.?(\d+)?(?:\.(\d+))?(?:\.\d+)?(?:devel|beta)?",
             v,
         )
